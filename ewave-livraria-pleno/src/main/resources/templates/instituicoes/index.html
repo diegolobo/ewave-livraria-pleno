@@ -1,0 +1,38 @@
+{#include fragments/layout}
+{#title}- Instituições de Ensino{/title}
+
+{#body}
+	<div class="jumbotron">
+	  <h1 class="display-3">Instituições de Ensino</h1>
+	  <p class="lead">
+	    <a class="btn btn-primary btn-lg" href="/instituicoes/novo" role="button">Nova Instituição</a>
+	  </p>
+	</div>
+	<div>
+		<table class="table table-hover">
+			 <thead>
+			   <tr>
+			     <th scope="col">Nome</th>
+			     <th scope="col">CNPJ</th>
+			     <th scope="col">Telefone</th>
+			     <th scope="col"></th>
+			   </tr>
+			 </thead>
+			 <tbody>
+			 	{#for inst in instituicoes}
+				 <tr scope="row">
+					 <th>{inst.nome}</th>
+					 <th>{inst.cnpj}</th>
+					 <th>{inst.telefone}</th>
+					 <th>
+					 	<a class="text-warning" href="/instituicoes/editar/{inst.id}">Editar</a>
+					 	/
+					 	<a class="text-danger" href="/instituicoes/excluir/{inst.id}">Remover</a>
+					 </th>
+				 </tr>
+				 {/}
+			 </tbody>
+		 </table>
+	 </div>
+{/body}
+{/include}

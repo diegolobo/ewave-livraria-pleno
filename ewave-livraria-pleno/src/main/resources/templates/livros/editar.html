@@ -1,0 +1,32 @@
+{@br.com.ewave.livraria.model.DTO.LivroDTO dto}
+{#include fragments/layout.html}
+{#title}- Editar Livro{/title}
+
+{#body}
+<div class="col-md-6 offset-md-3 ">
+	<h2 class="text-center">Editar Livro</h2>
+	<form class="form-horizontal" action="/livros/editarLivro" method="post">
+	<div class="form-group">
+		<input type="hidden" id="id" name="id" value="{livro.id}"/>
+	    <div class="form-group row">
+      	 <label for="titulo" class="col-sm-2 col-form-label">Título</label>
+	     <input type="text" class="col-md-8" name="titulo" id="titulo" value="{livro.titulo}"><br>
+	    </div>
+	    <div class="form-group row">
+      	 <label for="genero" class="col-sm-2 col-form-label">Gênero</label>
+	     <input type="text" class="col-md-8" name="genero" id="genero" value="{livro.genero}"><br>
+	    </div>
+	    <div class="form-group row">
+      	 <label for="autor" class="col-sm-2 col-form-label">Autor</label>
+	     <input type="text" class="col-md-8" name="autor" id="autor" value="{livro.autor}"><br>
+	    </div>
+	    <div class="form-group row">
+      	 <label for="sinopse" class="col-sm-2 col-form-label">Sinopse</label>
+	     <input type="text" class="col-md-8" name="sinopse" id="sinopse" value="{livro.sinopse}"><br>
+	    </div>
+	    <button type="submit" class="btn btn-primary">Salvar</button>
+	  </div>
+	</form>
+</div>
+{/body}
+{/include}

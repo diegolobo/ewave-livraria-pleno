@@ -1,0 +1,40 @@
+{#include fragments/layout}
+{#title}- Usuários{/title}
+
+{#body}
+	<div class="jumbotron">
+	  <h1 class="display-3">Usuários</h1>
+	  <p class="lead">
+	    <a class="btn btn-primary btn-lg" href="/usuarios/novo" role="button">Novo Usuário</a>
+	  </p>
+	</div>
+	<div>
+		<table class="table table-hover">
+			 <thead>
+			   <tr>
+			     <th scope="col">Nome</th>
+			     <th scope="col">CPF</th>
+			     <th scope="col">Telefone</th>
+			     <th scope="col">Email</th>
+			     <th scope="col"></th>
+			   </tr>
+			 </thead>
+			 <tbody>
+			 	{#for user in usuarios}
+				 <tr scope="row">
+					 <th>{user.nome}</th>
+					 <th>{user.cpf}</th>
+					 <th>{user.telefone}</th>
+					 <th>{user.email}</th>
+					 <th>
+					 	<a class="text-warning" href="/usuarios/editar/{user.id}">Editar</a>
+					 	/
+					 	<a class="text-danger" href="/usuarios/excluir/{user.id}">Remover</a>
+					 </th>
+				 </tr>
+				 {/}
+			 </tbody>
+		 </table>
+	 </div>
+{/body}
+{/include}

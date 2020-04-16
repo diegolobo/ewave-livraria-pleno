@@ -1,0 +1,14 @@
+{#include fragments/layout.html}
+{#title}- Excluir Usuário{/title}
+
+{#body}
+<div class="col-md-6 offset-md-3 ">
+	<h2 class="text-center">Tem certeza que deseja excluir o usuário {usuario.nome}?</h2>
+	<form class="form-horizontal" action="/usuarios/excluirUsuario" method="post">
+		<input type="hidden" id="id" name="id" value="{usuario.id}"/>
+		<button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="/usuarios" class="btn btn-secondary">Cancelar</a>
+	</form>
+</div>
+{/body}
+{/include}

@@ -1,0 +1,15 @@
+{@br.com.ewave.livraria.model.Livro livro}
+{#include fragments/layout.html}
+{#title}- Excluir Livro{/title}
+
+{#body}
+<div class="col-md-6 offset-md-3 ">
+	<h2 class="text-center">Tem certeza que deseja excluir o livro {livro.titulo}?</h2>
+	<form class="form-horizontal" action="/livros/excluirLivro" method="post">
+		<input type="hidden" id="id" name="id" value="{livro.id}"/>
+		<button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="/livros" class="btn btn-secondary">Cancelar</a>
+	</form>
+</div>
+{/body}
+{/include}

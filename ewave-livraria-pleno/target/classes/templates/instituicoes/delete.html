@@ -1,0 +1,14 @@
+{#include fragments/layout.html}
+{#title}- Excluir Instituição{/title}
+
+{#body}
+<div class="col-md-6 offset-md-3 ">
+	<h2 class="text-center">Tem certeza que deseja excluir a Instituição {inst.nome}?</h2>
+	<form class="form-horizontal" action="/instituicoes/excluirInstituicao" method="post">
+		<input type="hidden" id="id" name="id" value="{inst.id}"/>
+		<button type="submit" class="btn btn-danger">Excluir</button>
+        <a href="/instituicoes" class="btn btn-secondary">Cancelar</a>
+	</form>
+</div>
+{/body}
+{/include}

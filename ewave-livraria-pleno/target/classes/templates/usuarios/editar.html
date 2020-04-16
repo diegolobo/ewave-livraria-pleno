@@ -1,0 +1,43 @@
+{#include fragments/layout.html}
+{#title}- Editar Usuário{/title}
+
+{#body}
+<div class="col-md-6 offset-md-3 ">
+	<h2 class="text-center">Editar Usuário</h2>
+	<form class="form-horizontal" action="/usuarios/editarUsuario" method="post">
+	<div class="form-group">
+		<input type="hidden" id="id" name="id" value="{usuario.id}"/>
+	    <div class="form-group row">
+      	 <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+	     <input type="text" class="col-md-8" name="nome" id="nome" value="{usuario.nome}"><br>
+	    </div>
+	    <div class="form-group row">
+      	 <label for="endereco" class="col-sm-2 col-form-label">Endereço</label>
+	     <input type="text" class="col-md-8" name="endereco" id="endereco" value="{usuario.endereco}"><br>
+	    </div>
+	    <div class="form-group row">
+      	 <label for="cpf" class="col-sm-2 col-form-label">CPF</label>
+	     <input type="text" class="col-md-8" name="cpf" id="cpf" value="{usuario.cpf}"><br>
+	    </div>
+	    <div class="form-group row">
+      	 <label for="telefone" class="col-sm-2 col-form-label">Telefone</label>
+	     <input type="text" class="col-md-8" name="telefone" id="telefone" value="{usuario.telefone}"><br>
+	    </div>
+	    <div class="form-group row">
+      	 <label for="email" class="col-sm-2 col-form-label">Email</label>
+	     <input type="text" class="col-md-8" name="email" id="email" value="{usuario.email}"><br>
+	    </div>
+	    <div class="form-group">
+          <label for="instituicaoEnsinoId"> Selecione a Instituição de Ensino</label>
+          <select class="form-control" id="instituicaoEnsinoId" name="instituicaoEnsinoId">
+            {#for inst in usuario.instituicoes}
+            <option value="{inst.id}">{inst.nome}</option>
+            {/for}
+          </select>
+        </div>
+	    <button type="submit" class="btn btn-primary">Salvar</button>
+	  </div>
+	</form>
+</div>
+{/body}
+{/include}

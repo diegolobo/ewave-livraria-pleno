@@ -1,0 +1,40 @@
+{#include fragments/layout}
+{#title}- Livros{/title}
+
+{#body}
+	<div class="jumbotron">
+	  <h1 class="display-3">Livros</h1>
+	  <p class="lead">
+	    <a class="btn btn-primary btn-lg" href="/livros/novo" role="button">Novo Livro</a>
+	  </p>
+	</div>
+	<div>
+		<table class="table table-hover">
+			 <thead>
+			   <tr>
+			     <th scope="col">Título</th>
+			     <th scope="col">Gênero</th>
+			     <th scope="col">Autor</th>
+			     <th scope="col">Sinopse</th>
+			     <th scope="col"></th>
+			   </tr>
+			 </thead>
+			 <tbody>
+			 	{#for livro in livros}
+				 <tr scope="row">
+					 <th>{livro.titulo}</th>
+					 <th>{livro.genero}</th>
+					 <th>{livro.autor}</th>
+					 <th>{livro.sinopse}</th>
+					 <th>
+					 	<a class="text-warning" href="/livros/editar/{livro.id}">Editar</a>
+					 	/
+					 	<a class="text-danger" href="/livros/excluir/{livro.id}">Remover</a>
+					 </th>
+				 </tr>
+				 {/}
+			 </tbody>
+		 </table>
+	 </div>
+{/body}
+{/include}
